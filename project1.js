@@ -13,6 +13,7 @@ $(function(){
         .done(function(response){
             // console.log(response);
             myFunction(response);
+            
 
 })
 .fail(function(error){
@@ -27,16 +28,21 @@ function myFunction(response) {
     var $sidebar = $("#sidebar");
     // var $iselect = $("#iselect");
     xmlDoc = response;
+    
     x = xmlDoc.getElementsByTagName("list");
     list = x[0];
     y = list.getElementsByTagName("region");
-    for (i=0; i < 100; i++) {
+
+    for (i=0; i < 25; i++) {
         z = y[i];
         a = [z.getElementsByTagName("name"), z.getElementsByTagName("zindex"), z.getElementsByTagName("url"), z.getElementsByTagName("latitude"), z.getElementsByTagName("longitude")];
         $sidebar.append(a[0], "<br>Median home value in the region:$", a[1], "<br>", a[2], "<br>", a[3], ", ", a[4], "<br><br>");
     }
+   
     // check the console to see the list!
-    console.log(y);
-  }
+    // console.log(a[3].val());
+
         
+    
+    }
 });
