@@ -1,0 +1,35 @@
+body {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+    display: flex;
+}
+
+.form {
+    /* margin-top: 80px; */
+    margin-bottom: 20px;
+    padding: 50px 50px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); 
+    
+    justify-content: center;
+    
+}
+
+.display-3{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.radiobtn, .chkbox{
+    margin-right: 10px;
+}
+
+.commentbox{
+    width: 80%;
+}
+
+.submitBtn {
+    margin-left: auto;
+    margin-right: auto;
+}
