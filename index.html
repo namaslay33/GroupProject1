@@ -5,50 +5,44 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="project1.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Finding your new home made easy!</a>
+        <nav class="navbar-brand">Finding your new home made easy!</nav>
     </nav>
-    
     <div class="row" style="padding: 10px; margin-top: 55px;">
-      <!-- <div class="col-1"></div> -->
-    <div class="col-md-5 col-sm-12" id="searcharea">
-    <form style="text-align: left;">
-        Enter city:  
-        <input type="text" placeholder="Houston" id="cityselect" required> <br> <br>
-        Enter state:
-        <input type="text" placeholder="Texas" id="stateselect"> <br> <br>
-        <!-- <label for="exampleFormControlSelect1">Number of results desired:</label> -->
-        <!-- <input type="number" id="iselect" min="1" max="25"> <br> <br> -->
-        <button id="subBtn" class="btn btn-primary">submit</button>
-        <button id="clearBtn"class="btn btn-danger">clear</button>
-    </form>
+      <div class="col-sm-12" id="searcharea">
+        <form style="text-align:left;" id="citystateform">
+            <input type="text" placeholder="Houston" id="cityselect" required>
+            <input type="text" placeholder="Texas" id="stateselect" required> <br> <br>
+            <!-- <label for="exampleFormControlSelect1">Number of results desired:</label> -->
+            <!-- <input type="number" id="iselect" min="1" max="25"> <br> <br> -->
+            <button id="subBtn" class="btn btn-primary">submit</button>
+            <button id="clearBtn"class="btn btn-danger">clear</button>
+        </form>
+        <br>
+      </div>
   </div>
-
-
   <div class="col-md-7 col-sm-12">
-    <div id="sidebar"></div>
+      <div id="sidebar" class="float-left" style=></div>
   </div>
-</div>
+  <div id="map"></div>
+  <div class="embed-responsive embed-responsive-21by9">
+      <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB8Qz_yg_xOGzY73WTonlSf3yKwuD2XLNk
+      &q=Fairmont+Empress,Victoria+BC
+      &attribution_source=Google+Maps+Embed+API
+      &attribution_web_url=http://www.fairmont.com/empress-victoria/"></iframe>
+  </div>
 
-
-
-            
-                <!-- Page Content -->
-
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-async defer></script> -->
-      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8Qz_yg_xOGzY73WTonlSf3yKwuD2XLNk"></script>
     <script src="project1.js"></script>
   </body>
 </html>
