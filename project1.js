@@ -72,9 +72,6 @@ $(function(){
 
 
 function initMap() {
-            
-    // var patharray = [];
-    // Map options
     var options = {
         zoom : 8,
         center : {lat: 47.614848, lng: -122.33607}
@@ -84,28 +81,39 @@ function initMap() {
     var map = new 
     google.maps.Map(document.getElementById('map'), options);
 
+}
     // Add marker function
     function addMarker(props){
-    var marker = new google.maps.Marker({
-        position:props.coords,
-        map: map
-    });
-
-        // Check content
-        if(props.content){
-          // Info window
-          var infoWindow = new
-          google.maps.InfoWindow({
-          content: props.content
-          });
-
-          marker.addListener('click', function(){
-            infoWindow.open(map, marker);
-          })
-        }
-      }
-      
-}
+        var marker = new google.maps.Marker({
+            position:props.coords,
+            map: map
+        });
+    
+            // Check content
+            if(props.content){
+              // Info window
+              var infoWindow = new
+              google.maps.InfoWindow({
+              content: props.content
+              });
+    
+              marker.addListener('click', function(){
+                infoWindow.open(map, marker);
+              })
+            }
+          }
+          addMarker({
+            coords:{lat: 47.614848, lng: -122.33607},
+            content:'<h1> hi </h1>'
+          })   
+        
+          
+        //   for (i=0; i<50; i++){
+        //     addMarker({
+        //         coords:{lat: myLatLng[i].lat, lng: myLatLng[i].lng},
+        //         content:'<h1> hi </h1>'
+        //     });
+        //   }
  // // Add marker
             // var marker = new 
             // google.maps.Marker({
@@ -144,3 +152,4 @@ function initMap() {
         //       title: myLatLng[i][2],
         // }
         //     });
+
