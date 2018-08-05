@@ -10,6 +10,8 @@ function initMap() {
         zoom: 4,
     });
 };
+$('#subBtn').on('click', function (e) {
+    e.preventDefault();
 $.getJSON('https://code.org/schools.json' , function(data) {
     // console.log(data);
     // console.log(data['schools'][0]['zip']);
@@ -41,6 +43,17 @@ $.getJSON('https://code.org/schools.json' , function(data) {
           position["state"] = state;
           position["zip"] = zip;
           locations.push(position);
+
+          var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h3 id="firstHeading" class="firstHeading">' + contact_name + '</h3>'+
+            '<div id="bodyContent">'+
+            '<p> ' + name + '<br>' + levels + contact_number + contact_email +
+            '</p>' 
+            '</div>' +
+            '</div>';
+
         //   console.log(locations);
         // console.log(name);
           var infowindow = new google.maps.InfoWindow({
@@ -48,17 +61,22 @@ $.getJSON('https://code.org/schools.json' , function(data) {
           });
 
           var myLatlng = new google.maps.LatLng(position.lat, position.lng);
+          var icon = {
+            url: "/educationicon.png", // url
+            scaledSize: new google.maps.Size(30, 30), // scaled size
+        };
           var marker = new google.maps.Marker({
             position: myLatlng,
             map: map,
             title: name,
+            icon: icon
           })
           marker.addListener('click', function (){
             infowindow.open(map, marker);
           });
-          marker.setVisible(false);
+        //   marker.setVisible(false);
 
     }
     
-
+    })
   });

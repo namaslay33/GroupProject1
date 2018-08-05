@@ -102,8 +102,6 @@ $('#subBtn').on('click', function (e) {
             '<div id="bodyContent">'+
             '<p>The median home value in ' + name + ' is $'+ medianValue + '.' +
             '</p>' +
-            '<p>Attribution: ' + name + ', <a href="'+ url + '">'+
-            url + '</a></p>'+
             '</div>'+
             '</div>';
             
