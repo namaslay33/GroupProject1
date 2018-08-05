@@ -1,4 +1,5 @@
 var map;
+var markers = [];
 function initMap() {
 
     // load the map
@@ -15,8 +16,12 @@ $('#subBtn').on('click', function (e) {
 $.getJSON('https://code.org/schools.json' , function(data) {
     // console.log(data);
     // console.log(data['schools'][0]['zip']);
+    // markers = [];
+    var schools = data.schools
     for (i=0; i <= data.schools.length; i++){
-      var contact_name = data.schools[i].contact_name,
+        (function (schools) {
+      var name = data.schools[i].name,
+          contact_name = data.schools[i].contact_name,
           levels = data.schools[i].levels[i],
           website = data.schools[i].website,
           contact_number = data.schools[i].contact_number,
@@ -27,40 +32,29 @@ $.getJSON('https://code.org/schools.json' , function(data) {
           zip = data.schools[i].zip,
           latitude = data.schools[i].latitude,
           longitude = data.schools[i].longitude;
-          
-          var locations = [];
-
-          var position = new Object;
-          position["title"] = contact_name;
-          position["lat"] = latitude;
-          position["lng"] = longitude;
-          position["levels"] = levels ;
-          position["website"] = website;
-          position["contact_number"] = contact_number;
-          position["contact_email"] = contact_email;
-          position["street"] = street;
-          position["city"] = city;
-          position["state"] = state;
-          position["zip"] = zip;
-          locations.push(position);
 
           var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h3 id="firstHeading" class="firstHeading">' + contact_name + '</h3>'+
+            '<h3 id="firstHeading" class="firstHeading">' + name + '</h3>'+
             '<div id="bodyContent">'+
-            '<p> ' + name + '<br>' + levels + contact_number + contact_email +
+            '<p> ' 
+            + street + '<br>' 
+            + city + '<br>' 
+            + state + '<br>' 
+            + zip + '</p><p>' 
+            + contact_name + '<br>'  
+            + contact_number + '<br>' 
+            + contact_email + '<br>'
             '</p>' 
             '</div>' +
             '</div>';
 
-        //   console.log(locations);
-        // console.log(name);
           var infowindow = new google.maps.InfoWindow({
-            content: position.title
+            content: contentString
           });
 
-          var myLatlng = new google.maps.LatLng(position.lat, position.lng);
+          var myLatlng = new google.maps.LatLng(latitude, longitude);
           var icon = {
             url: "/educationicon.png", // url
             scaledSize: new google.maps.Size(30, 30), // scaled size
@@ -71,12 +65,22 @@ $.getJSON('https://code.org/schools.json' , function(data) {
             title: name,
             icon: icon
           })
-          marker.addListener('click', function (){
+          marker.addListener('click', function() {
             infowindow.open(map, marker);
           });
-        //   marker.setVisible(false);
+          google.maps.event.addListener(map, "click", function(event) {
+            infowindow.close();
+        });
+        markers.push(marker);
+        })(schools[i]);
 
     }
     
+    
     })
   });
+
+  $('#schoolToggle').on('click', function(){
+           marker.fadeOut('slow');
+  })
+
