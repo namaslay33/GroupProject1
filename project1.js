@@ -1,155 +1,125 @@
-$(function(){
-    $('#clearBtn').on('click', function(e){
-        e.preventDefault();
-        $( "#sidebar" ).empty();
-    });
-    $('#subBtn').on('click', function(e){
-        e.preventDefault();
+var map;
+function initMap() {
 
+    // load the map
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+            lat: 40,
+            lng: -100
+        },
+        zoom: 4,
+    });
+}
+
+// set up the style rules and events for google.maps.Data
+// map.data.setStyle(styleFeature);
+// map.data.addListener('mouseover', mouseInToRegion);
+// map.data.addListener('mouseout', mouseOutOfRegion);
+
+// wire up the button
+// var selectBox = document.getElementById('census-variable');
+// google.maps.event.addDomListener(selectBox, 'change', function() {
+// clearCensusData();
+// loadCensusData(selectBox.options[selectBox.selectedIndex].value);
+// });
+
+// map.data.addListener('click', ev => {
+//     const f = ev.marker;
+//     const title = f.getProperty('title');
+//     const description = f.getProperty('Description');
+
+//     if (!description) {
+//         return;
+//     }
+
+//     infowindow.setContent(`<b>${title}</b><br/> ${description}`);
+//     infowindow.setPosition(f.getGeometry().get());
+//     infowindow.setOptions({
+//         pixelOffset: new google.maps.Size(0, -30)
+    // });
+//     infowindow.open(map);
+// });
+
+
+
+
+// $('#clearBtn').on('click', function (e) {
+//     e.preventDefault();
+//     console.log('working');
+//     $sidebar.empty();
+// });
+$('#subBtn').on('click', function (e) {
+    e.preventDefault();
+    // console.log('help'); 
     // getting the API data from zillow
     var city = $("#cityselect").val();
     var state = $("#stateselect").val();
     $.get('http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz18fvjq3ltsb_6ttia&state=' + state + '&city=' + city + '&childtype=neighborhood')
-    .done(function(response){
-        myFunction(response);
-            
+        .done(function (response) {
+            myFunction(response);
+            // console.log(response);
 
-})
-.fail(function(error){
-    console.log(error);
-})
+        })
+
+        .fail(function (error) {
+            console.log(error);
+        })
 
 
-})
-// function to find elements in the response and for loop to add the data to the HTML
+    // })
 
     function myFunction(response) {
-        var $sidebar = $("#sidebar");
-        var myLatLng = [];
-        var myContents = [];
-
         var $xmlResponse = $(response);
-        var counter = 0;
+        console.log($xmlResponse);
         console.log(response);
-        $xmlResponse.find('region').each(function(){
-            // console.log($(this));
+        $sidebar = $("#sidebar");
+       
+        // console.log(response);
+
+        $xmlResponse.find('region').each(function () {
             var $region = $(this);
+            var name = $region.find('name').text(),
+                medianValue = $region.find('zindex').text(),
+                url = $region.find('url').text(),
+                lt = $region.find('latitude').text(),
+                ln = $region.find('longitude').text(),
+                lat = parseFloat(lt),
+                lng = parseFloat(ln);
             
-            var name = $region.find('name').text();
-            var medianValue = $region.find('zindex').text();
-            var url = $region.find('url').text();
-            var latitude = $region.find('latitude').text();
-            var longitude = $region.find('longitude').text();
-
-            var position = {};
-            position["lat"] = $region.find('latitude').text();
-            position["lng"] = $region.find('longitude').text();
-            myLatLng.push(position);
-
-            var contents = {};
-            contents["name"] = $region.find('name').text();
-            contents["url"] = $region.find('url').text();
-            myContents.push(contents);
+            var locations = [];
             
+            var position = new Object;
+            position["title"] = name;
+            position["lat"] = lat;
+            position["lng"] = lng;
+            position["Description"] = medianValue;
+            locations.push(position);
+            var infowindow = new google.maps.InfoWindow({
+                content: medianValue
+              });
+      
+            var myLatlng = new google.maps.LatLng(position.lat, position.lng)
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: name,
+              });
+              marker.addListener('click', function() {
+                infowindow.open(map, marker);
+              });
+            //   google.maps.window.setPosition(position.lat, position.lng);
+        // }
+        })
+        // google.maps.event.addDomListener(window, 'load', init);
+        // return locations;
+        // // return geoJSON;
+        // console.log(geoJSON);
+        // map.data.addGeoJson(geoJSON);
 
-            if (counter > 0 && counter < 50) {
-            $sidebar.append(name + "<br>" + "Median price: $" + medianValue + "<br><br>");
-            // $sidebar.append("<br> Median home value for this area: $" + medianValue + "<br>" );
-            // console.log(name);
-            }
-            counter++;
 
 
-                
-              
-    //outside of loop
-        
-})
 
-    }
     
-});
-
-
-function initMap() {
-    var options = {
-        zoom : 8,
-        center : {lat: 47.614848, lng: -122.33607}
-    }
-    
-    // New map
-    var map = new 
-    google.maps.Map(document.getElementById('map'), options);
 
 }
-    // Add marker function
-    function addMarker(props){
-        var marker = new google.maps.Marker({
-            position:props.coords,
-            map: map
-        });
-    
-            // Check content
-            if(props.content){
-              // Info window
-              var infoWindow = new
-              google.maps.InfoWindow({
-              content: props.content
-              });
-    
-              marker.addListener('click', function(){
-                infoWindow.open(map, marker);
-              })
-            }
-          }
-          addMarker({
-            coords:{lat: 47.614848, lng: -122.33607},
-            content:'<h1> hi </h1>'
-          })   
-        
-          
-        //   for (i=0; i<50; i++){
-        //     addMarker({
-        //         coords:{lat: myLatLng[i].lat, lng: myLatLng[i].lng},
-        //         content:'<h1> hi </h1>'
-        //     });
-        //   }
- // // Add marker
-            // var marker = new 
-            // google.maps.Marker({
-            //   position:{lat: 42.3601,lng: -71.0589},
-            //   map: map
-            // });
-
-            // // Info window
-            // var infoWindow = new
-            // google.maps.InfoWindow({
-            //   content: '<h1>hi</h1>'
-            // });
-            // marker.addListener('click', function(){
-            //   infoWindow.open(map, marker);
-            // })
-
-            // for (var i = 1; i<myLatLng.length; i++){
-            //     patharray.push(new google.maps.LatLng(myLatLng[i][0], myLatLng[i][1]));
-            // }
-            // var tourplan = new google.maps.Polyline({
-            //     path: patharray,
-            //     strokeColor: "#000FF",
-            //     strokeOpacity: 0.6,
-            //     strokeWeight : 2,
-            // });
-            // tourplan.setMap(map)
-            // }
-        //     var map = new google.maps.Map(document.getElementById('map'), {
-        //       zoom: 4,
-        //       center: (myLatLng[0][0], myLatLng[0][1]
-        //     });
-        // for (var i = 1; i<myLatLng.length; i++){
-        //     var marker = new google.maps.Marker({
-        //       position: (myLatLng[i][0], myLatLng[i][1]),
-        //       map: map,
-        //       title: myLatLng[i][2],
-        // }
-        //     });
-
+})

@@ -7,44 +7,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="project1.css">
+    <style>
+      html, body, #map { height: 100%; margin: 0; padding: 0; overflow: hidden; }
+      input { width: 150px; margin-top: 20px; }
+        .menubar {
+          position: relative;
+          height:40px;
+          /* bottom: px; */
+        }
+        .options{
+          margin-top: -15px;
+          /* margin-right: 500px; */
+        }
+        .nicebox {
+          position: absolute;
+          text-align: center;
+          font-family: "Roboto", "Arial", sans-serif;
+          font-size: 13px;
+          z-index: 5;
+          box-shadow: 0 4px 6px -4px #333;
+          padding: 5px 10px;
+          background: rgb(255,255,255);
+          background: linear-gradient(to bottom,rgba(255,255,255,1) 0%,rgba(245,245,245,1) 100%);
+          border: rgb(229, 229, 229) 1px solid;
+        }
+        #controls {
+          top: 50px;
+          right: 0px;
+          width: 30px;
+          height: 33px;
+        }
+        #data-box {
+          top: 100px;
+          left: 500px;
+          height: 45px;
+          line-height: 45px;
+          display: none;
+        }
+        #census-variable {
+          width: 320px;
+          height: 10px;
+        }
+      
+        #data-value { font-size: 2.0em; font-weight: bold }
+        #data-label { font-size: 2.0em; font-weight: normal; padding-right: 10px; }
+        #data-label:after { content: ':' }
+        #data-caret { margin-left: -5px; display: none; font-size: 14px; width: 14px}
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <nav class="navbar-brand">Finding your new home made easy!</nav>
-    </nav>
-    <div class="row" style="padding: 10px; margin-top: 55px;">
-      <div class="col-sm-12" id="searcharea">
-        <form style="text-align:left;" id="citystateform">
-            <input type="text" placeholder="City" id="cityselect" required>
-            <input type="text" placeholder="State" id="stateselect" required> <br> <br>
-            <button id="subBtn" class="btn btn-primary">submit</button>
-            <button id="clearBtn"class="btn btn-danger">clear</button>
-        </form>
-        <br>
-        <button id="showMapResults" class="btn">display on map</button>
-        <br>
+  
+    <nav class="navbar navbar navbar-light bg-info">
+        <nav class="navbar-brand"><h5>P i l l o w  S e a r c h</h5></nav>
+        <nav class="navbar-text">information display</nav>
+        <div class="menubar row">
+      <div class="options col-lg-12">
+          <input type="text" placeholder="City" id="cityselect">
+          <input type="text" placeholder="State" id="stateselect">
+          <button id="subBtn" class="btn btn-primary">submit</button>
+          <button id="clearBtn"class="btn btn-danger">clear</button>
+        </div>  
       </div>
+        
+    </nav>
   </div>
-  <div class="col-md-7 col-sm-12">
-      <div id="sidebar" class="float-left" style=></div>
+    <div class="row">
+      <div id="sidebar"></div>
+    </div>
+    <!-- <div id="controls">
+        <select id="controls census-variable">
+            <option value="">Schools</option>
+            <option value="">Neighboorhoods</option>
+          </select>
+        </div> -->
+  <div id="data-box" class="nicebox">
+    <label id="data-label" for="data-value"></label>
+    <span id="data-value"></span>
   </div>
-  <div id="map" style="height: 400px; width: 100%;"></div>
-  <!-- <div class="embed-responsive embed-responsive-21by9">
-      <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB8Qz_yg_xOGzY73WTonlSf3yKwuD2XLNk
-      &q=Fairmont+Empress,Victoria+BC
-      &attribution_source=Google+Maps+Embed+API
-      &attribution_web_url=http://www.fairmont.com/empress-victoria/"></iframe>
-  </div> -->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <div id="map"></div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8Qz_yg_xOGzY73WTonlSf3yKwuD2XLNk"></script> -->
     <script src="project1.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8Qz_yg_xOGzY73WTonlSf3yKwuD2XLNk&callback=initMap"></script>
-    
   </body>
 </html>
