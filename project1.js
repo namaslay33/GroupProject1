@@ -70,8 +70,8 @@ $('#subBtn').on('click', function (e) {
 
     function myFunction(response) {
         var $xmlResponse = $(response);
-        console.log($xmlResponse);
-        console.log(response);
+        // console.log($xmlResponse);
+        // console.log(response);
         $sidebar = $("#sidebar");
        
         // console.log(response);
@@ -94,19 +94,44 @@ $('#subBtn').on('click', function (e) {
             position["lng"] = lng;
             position["Description"] = medianValue;
             locations.push(position);
+
+            var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h3 id="firstHeading" class="firstHeading">' + name + '</h3>'+
+            '<div id="bodyContent">'+
+            '<p>The median home value in ' + name + ' is $'+ medianValue + '.' +
+            '</p>' +
+            '<p>Attribution: ' + name + ', <a href="'+ url + '">'+
+            url + '</a></p>'+
+            '</div>'+
+            '</div>';
+            
             var infowindow = new google.maps.InfoWindow({
-                content: medianValue
+                content: contentString
               });
-      
+            // console.log(url);
             var myLatlng = new google.maps.LatLng(position.lat, position.lng)
+            // var initialLatlng = new google.maps.LatLng(position.lat, position.lng)
+            map.setCenter(myLatlng);
+            map.setZoom(11);
+            var icon = {
+                url: "/homeicon.png", // url
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            };
             var marker = new google.maps.Marker({
                 position: myLatlng,
                 map: map,
                 title: name,
+                icon: icon,
+                // size: new google.maps.Size(100, 100),
               });
               marker.addListener('click', function() {
                 infowindow.open(map, marker);
               });
+              google.maps.event.addListener(map, "click", function(event) {
+                infowindow.close();
+            });
             //   google.maps.window.setPosition(position.lat, position.lng);
         // }
         })
@@ -115,11 +140,6 @@ $('#subBtn').on('click', function (e) {
         // // return geoJSON;
         // console.log(geoJSON);
         // map.data.addGeoJson(geoJSON);
-
-
-
-
-    
-
 }
+
 })
