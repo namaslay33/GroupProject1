@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>P i l l o w S e a r c h</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -49,11 +49,44 @@
           width: 320px;
           height: 10px;
         }
-      
         #data-value { font-size: 2.0em; font-weight: bold }
         #data-label { font-size: 2.0em; font-weight: normal; padding-right: 10px; }
         #data-label:after { content: ':' }
         #data-caret { margin-left: -5px; display: none; font-size: 14px; width: 14px}
+        #floating-panel {
+        display: none;
+        position: absolute;
+        top: 105px;
+        left: 10px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 25px;
+        padding-left: 10px;
+      }
+      /* #floating-panel2 {
+        display: none;
+        position: absolute;
+        top: 105px;
+        left: 100px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      } */
+      tr{
+        font-size: 12px;
+      }
+      tbody{
+        font-size: 10px;
+      }
     </style>
   </head>
   <body>
@@ -63,8 +96,8 @@
         <nav class="navbar-text">
           <div class="list-group">
             <span>
-            <button type="button" id="schoolToggle">toggle schools</button>
-            <button type="button" id="houseToggle">toggle neighboorhoods</button>
+            <button type="button" id="houses" onclick="showHideHouse()">Show Side Panel</button>
+            <!-- <button type="button" id="schools" onclick="showHideSchool()">Schools</button> -->
           </span>
           </div>
         </nav>
@@ -78,20 +111,47 @@
       </div>
     </nav>
   </div>
-    <div class="row">
-      <div id="sidebar"></div>
-    </div>
-    <!-- <div id="controls">
-        <select id="controls census-variable">
-            <option value="">Schools</option>
-            <option value="">Neighboorhoods</option>
-          </select>
-        </div> -->
-  <div id="data-box" class="nicebox">
-    <label id="data-label" for="data-value"></label>
-    <span id="data-value"></span>
-  </div>
+  <div id="floating-panel">
+  <table id="t2">
+      <tr>
+        <th>Neighborhood</th>
+        <th>Median Price</th>
+      </tr>
+      <tbody>
+      </tbody>
+  </table>
+</div>
+  <!-- <div id="floating-panel2">
+  <table id="t1">
+      <tr>
+        <th>Schools</th>
+      </tr>
+      <tbody>
+      </tbody>
+  </table>
+</div> -->
+
   <div id="map"></div>
+    <script>
+
+      
+      function showHideHouse() {
+            var x = document.getElementById("floating-panel");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        // function showHideSchool() {
+        //     var x = document.getElementById("floating-panel2");
+        //     if (x.style.display === "none") {
+        //         x.style.display = "block";
+        //     } else {
+        //         x.style.display = "none";
+        //     }
+        // }
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>

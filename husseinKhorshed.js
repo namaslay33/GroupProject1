@@ -1,5 +1,7 @@
 var map;
 var markers = [];
+var tbody = $('#t1').children('tbody');
+var table = tbody.length ? tbody : $('#t1');
 function initMap() {
 
     // load the map
@@ -36,7 +38,7 @@ $.getJSON('https://code.org/schools.json' , function(data) {
           var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h3 id="firstHeading" class="firstHeading">' + name + '</h3>'+
+            '<h4 id="firstHeading" class="firstHeading">' + name + '</h4>'+
             '<div id="bodyContent">'+
             '<p> ' 
             + street + '<br>' 
@@ -49,7 +51,7 @@ $.getJSON('https://code.org/schools.json' , function(data) {
             '</p>' 
             '</div>' +
             '</div>';
-
+                   
           var infowindow = new google.maps.InfoWindow({
             content: contentString
           });
@@ -77,10 +79,7 @@ $.getJSON('https://code.org/schools.json' , function(data) {
     }
     
     
+    
     })
   });
-
-  $('#schoolToggle').on('click', function(){
-           marker.fadeOut('slow');
-  })
 

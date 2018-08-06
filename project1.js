@@ -1,4 +1,7 @@
 var map;
+var locations = [];
+var tbody = $('#t2').children('tbody');
+var table = tbody.length ? tbody : $('#t2');
 function initMap() {
 
     // load the map
@@ -43,11 +46,12 @@ function initMap() {
 
 
 
-// $('#clearBtn').on('click', function (e) {
-//     e.preventDefault();
-//     console.log('working');
-//     $sidebar.empty();
-// });
+$('#clearBtn').on('click', function (e) {
+    e.preventDefault();
+    // console.log('working');
+    table.empty();
+    map.set
+});
 $('#subBtn').on('click', function (e) {
     e.preventDefault();
     // console.log('help'); 
@@ -70,11 +74,6 @@ $('#subBtn').on('click', function (e) {
 
     function myFunction(response) {
         var $xmlResponse = $(response);
-        // console.log($xmlResponse);
-        // console.log(response);
-        $sidebar = $("#sidebar");
-       
-        // console.log(response);
 
         $xmlResponse.find('region').each(function () {
             var $region = $(this);
@@ -85,9 +84,7 @@ $('#subBtn').on('click', function (e) {
                 ln = $region.find('longitude').text(),
                 lat = parseFloat(lt),
                 lng = parseFloat(ln);
-            
-            var locations = [];
-            
+
             var position = new Object;
             position["title"] = name;
             position["lat"] = lat;
@@ -98,7 +95,7 @@ $('#subBtn').on('click', function (e) {
             var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h3 id="firstHeading" class="firstHeading">' + name + '</h3>'+
+            '<h4 id="firstHeading" class="firstHeading">' + name + '</h4>'+
             '<div id="bodyContent">'+
             '<p>The median home value in ' + name + ' is $'+ medianValue + '.' +
             '</p>' +
@@ -108,9 +105,9 @@ $('#subBtn').on('click', function (e) {
             var infowindow = new google.maps.InfoWindow({
                 content: contentString
               });
-            // console.log(url);
+
             var myLatlng = new google.maps.LatLng(position.lat, position.lng)
-            // var initialLatlng = new google.maps.LatLng(position.lat, position.lng)
+
             map.setCenter(myLatlng);
             map.setZoom(11);
             var icon = {
@@ -122,22 +119,30 @@ $('#subBtn').on('click', function (e) {
                 map: map,
                 title: name,
                 icon: icon,
-                // size: new google.maps.Size(100, 100),
               });
-              marker.addListener('click', function() {
+
+            marker.addListener('click', function() {
                 infowindow.open(map, marker);
-              });
-              google.maps.event.addListener(map, "click", function(event) {
+            });
+            google.maps.event.addListener(map, "click", function(event) {
                 infowindow.close();
             });
-            //   google.maps.window.setPosition(position.lat, position.lng);
-        // }
         })
-        // google.maps.event.addDomListener(window, 'load', init);
-        // return locations;
-        // // return geoJSON;
-        // console.log(geoJSON);
-        // map.data.addGeoJson(geoJSON);
+
+        locations.sort(function(a, b) {
+            return a.Description - b.Description;
+        });
+        locations.reverse();
+
+        for (i=0; i<5; i++){        
+            table.append('<tr><td>' + locations[i].title + '</td><td>' + locations[i].Description + '</td></tr>');
+            console.log("end: " + i);
+        }
 }
+
+
+
+// console.log();
+
 
 })
