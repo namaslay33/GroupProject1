@@ -8,7 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <style>
-      html, body, #map { height: 100%; margin: 0; padding: 0; overflow: hidden; }
+      html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; }
+      #map { height: 100%; max-height: 91%; margin: 0; padding: 0; overflow: hidden; }
       input { width: 150px; margin-top: 20px; }
         .menubar {
           position: relative;
@@ -19,40 +20,6 @@
           margin-top: -15px;
           /* margin-right: 500px; */
         }
-        .nicebox {
-          position: absolute;
-          text-align: center;
-          font-family: "Roboto", "Arial", sans-serif;
-          font-size: 13px;
-          z-index: 5;
-          box-shadow: 0 4px 6px -4px #333;
-          padding: 5px 10px;
-          background: rgb(255,255,255);
-          background: linear-gradient(to bottom,rgba(255,255,255,1) 0%,rgba(245,245,245,1) 100%);
-          border: rgb(229, 229, 229) 1px solid;
-        }
-        #controls {
-          top: 50px;
-          right: 0px;
-          width: 30px;
-          height: 33px;
-          /* background: transparent; */
-        }
-        #data-box {
-          top: 100px;
-          left: 500px;
-          height: 45px;
-          line-height: 45px;
-          display: none;
-        }
-        #census-variable {
-          width: 320px;
-          height: 10px;
-        }
-        #data-value { font-size: 2.0em; font-weight: bold }
-        #data-label { font-size: 2.0em; font-weight: normal; padding-right: 10px; }
-        #data-label:after { content: ':' }
-        #data-caret { margin-left: -5px; display: none; font-size: 14px; width: 14px}
         #floating-panel {
         display: none;
         position: absolute;
@@ -66,50 +33,69 @@
         font-family: 'Roboto','sans-serif';
         line-height: 25px;
         padding-left: 10px;
+        border-radius: 2px;
+        border: transparent;
       }
-      /* #floating-panel2 {
-        display: none;
+      #floating-panel2 {
         position: absolute;
-        top: 105px;
-        left: 100px;
+        top: 67px;
+        left: 91px;
         z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
+        font-size: 10px;
         text-align: center;
         font-family: 'Roboto','sans-serif';
-        line-height: 30px;
+        line-height: 25px;
         padding-left: 10px;
-      } */
+      }
       tr{
         font-size: 12px;
       }
       tbody{
         font-size: 10px;
       }
+      #houses{
+        border-radius: 2px;
+        height:29px;
+        border:transparent;
+        color:grey;
+        /* box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+      }
+      #houses:focus{
+        outline:0;
+        border:transparent;
+        /* color:black; */
+      }
+      #houses:hover{
+        color:black;
+      }
+      #select{
+        border: transparent;
+      }
+      #select:focus{
+        outline:0;
+      }
     </style>
   </head>
   <body>
   
-    <nav class="navbar navbar navbar-light bg-info">
-        <nav class="navbar-brand"><h5>P i l l o w  S e a r c h</h5></nav>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <nav class="navbar-brand">
+          
+          <h5><img src="/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="">Pillow</h5></nav>
         <nav class="navbar-text">
-          <div class="list-group">
-            <span>
-            <button type="button" id="houses" onclick="showHideHouse()">Show Side Panel</button>
-            <!-- <button type="button" id="schools" onclick="showHideSchool()">Schools</button> -->
-          </span>
-          </div>
+          Enter a location to search for local real estate and school data
         </nav>
         <div class="menubar row">
       <div class="options col-lg-12">
-          <input type="text" placeholder="City" id="cityselect">
-          <input type="text" placeholder="State" id="stateselect">
-          <button id="subBtn" class="btn btn-primary">submit</button>
-          <button id="clearBtn"class="btn btn-danger">clear</button>
+          <input type="text" placeholder="City.." id="cityselect">
+          <input type="text" placeholder="State.." id="stateselect">
+          <button id="subBtn" class="btn btn-sm">Search</button>
         </div>  
       </div>
     </nav>
+  </div>
+  <div id="floating-panel2">
+  <button type="button" id="houses" onclick="showHideHouse()">Show Data</button>
   </div>
   <div id="floating-panel">
   <table id="t2">
@@ -121,43 +107,24 @@
       </tbody>
   </table>
 </div>
-  <!-- <div id="floating-panel2">
-  <table id="t1">
-      <tr>
-        <th>Schools</th>
-      </tr>
-      <tbody>
-      </tbody>
-  </table>
-</div> -->
-
-  <div id="map"></div>
-    <script>
-
-      
-      function showHideHouse() {
-            var x = document.getElementById("floating-panel");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
-        // function showHideSchool() {
-        //     var x = document.getElementById("floating-panel2");
-        //     if (x.style.display === "none") {
-        //         x.style.display = "block";
-        //     } else {
-        //         x.style.display = "none";
-        //     }
-        // }
-    </script>
+  <div id="map">
+    
+  </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     <script src="husseinKhorshed.js"></script>
     <script src="project1.js"></script>
-
+    <script>
+        function showHideHouse() {
+              var x = document.getElementById("floating-panel");
+              if (x.style.display === "none") {
+                  x.style.display = "block";
+              } else {
+                  x.style.display = "none";
+              }
+          }
+    </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8Qz_yg_xOGzY73WTonlSf3yKwuD2XLNk&callback=initMap"></script>
   </body>
 </html>

@@ -1,7 +1,6 @@
 var map;
 var locations = [];
-var tbody = $('#t2').children('tbody');
-var table = tbody.length ? tbody : $('#t2');
+var table = $('#t2').children('tbody'); 
 function initMap() {
 
     // load the map
@@ -13,45 +12,12 @@ function initMap() {
         zoom: 4,
     });
 }
-
-// set up the style rules and events for google.maps.Data
-// map.data.setStyle(styleFeature);
-// map.data.addListener('mouseover', mouseInToRegion);
-// map.data.addListener('mouseout', mouseOutOfRegion);
-
-// wire up the button
-// var selectBox = document.getElementById('census-variable');
-// google.maps.event.addDomListener(selectBox, 'change', function() {
-// clearCensusData();
-// loadCensusData(selectBox.options[selectBox.selectedIndex].value);
+// $('#clearBtn').on('click', function (e) {
+//     e.preventDefault();
+//     // console.log('working');
+//     table.empty();
+//     map.set
 // });
-
-// map.data.addListener('click', ev => {
-//     const f = ev.marker;
-//     const title = f.getProperty('title');
-//     const description = f.getProperty('Description');
-
-//     if (!description) {
-//         return;
-//     }
-
-//     infowindow.setContent(`<b>${title}</b><br/> ${description}`);
-//     infowindow.setPosition(f.getGeometry().get());
-//     infowindow.setOptions({
-//         pixelOffset: new google.maps.Size(0, -30)
-    // });
-//     infowindow.open(map);
-// });
-
-
-
-
-$('#clearBtn').on('click', function (e) {
-    e.preventDefault();
-    // console.log('working');
-    table.empty();
-    map.set
-});
 $('#subBtn').on('click', function (e) {
     e.preventDefault();
     // console.log('help'); 
@@ -110,6 +76,11 @@ $('#subBtn').on('click', function (e) {
 
             map.setCenter(myLatlng);
             map.setZoom(11);
+
+            var x = document.getElementById("floating-panel");
+            x.style.display = "block";
+
+            // smoothZoom(map, 11, map.getZoom());
             var icon = {
                 url: "/homeicon.png", // url
                 scaledSize: new google.maps.Size(30, 30), // scaled size
@@ -134,13 +105,13 @@ $('#subBtn').on('click', function (e) {
         });
         locations.reverse();
 
-        for (i=0; i<5; i++){        
+        for (i=0; i<16; i++){     
             table.append('<tr><td>' + locations[i].title + '</td><td>' + locations[i].Description + '</td></tr>');
             console.log("end: " + i);
+            $('#t2').find("tr:gt(16)").remove();
         }
+
 }
-
-
 
 // console.log();
 
