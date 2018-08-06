@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Events</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Events Near Your Area</a>
+    </nav>
+
+    
+
+    <div class="row" style="padding: 10px; margin-top: 55px;">
+    <div class="col-1"></div>
+    <div class="col-md-5 col-sm-12" id="searcharea">
+    <form style="text-align: left;">
+        Enter city:  
+        <input type="text" placeholder="Houston" id="cityselect" required> <br> <br>
+        Enter state:
+        <input type="text" placeholder="Tx" id="stateselect"> <br> <br>
+        Event Type:
+        <select id="dropdown">
+            <option value="" selected disabled hidden>Choose One Below</option>
+            <option value="1">Arts &amp; Theatre</option>
+            <option value="2">Music</option>
+            <option value="3">Sports</option>
+        </select>
+        
+        <div>
+            <button id="subBtn" class="btn btn-primary">Get Events</button>
+        </div>
+        
+        <button id="clearBtn"class="btn btn-danger" onclick="clearForm(this.form);">Clear</button>
+    </form>
+    </div>
+
+    <div id="eventInfo"></div>
+    
+      
+    <!-- Optional JavaScript
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="events.js"></script>
+</body>
+</html>

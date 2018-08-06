@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Customer Survey</title>
+    <title>Client Survey</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,11 +14,11 @@
 
     <div class="container">
     
-    <form class="form">
+    <form class="form" method="post" name="client-survey" action="surveyform.php">
 
         <div class="display-3">How are we doing?</div>
 
-        <p>At Pillow, we are always working to enhance our customer's experience. We'd love to hear on how we can improve. </p>
+        <p>At Pillow, we are always working to enhance our customer's experience. We'd love to hear how we can improve. </p>
 
         <hr>
 
@@ -114,14 +114,14 @@
         </div>
 
         <div class="form-group">
-            <label for="comments">Tell us more:</label>
+            <label for="comment">Tell us more:</label>
             <div>
                 <textarea class="commentbox" id="commentbox" rows="5" placeholder="Share your experience with us. What went well? What could have been better?"></textarea>
             </div>
         </div>
 
         <div class="row">
-            <button type="submit" class="btn submitBtn offset-5">
+            <button type="submit" class="btn submitBtn offset-5" name="submitSurvey">
                 Submit Feedback
             </button>
         </div>
