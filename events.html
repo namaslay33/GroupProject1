@@ -1,75 +1,68 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Events</title>
+    <title>Event Lookup</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-  </head>
-  <body>
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Events Near Your Area</a>
-    </nav>
-
+        <div class="eventNav fixed-top">
     
-<!-- Had this as a row. I think it made the page shrink -->
-    <div style="padding: 10px; margin-top: 55px;">
-   <div></div>
-
-    <div id="searcharea">
-
-    <form style="text-align: left;">
-        Enter city:  
-        <input type="text" placeholder="Houston" id="cityselect" required> <br> <br>
-        Enter state:
-        <input type="text" placeholder="Tx" id="stateselect"> <br> <br>
-        Event Type:
-        <select id="dropdown">
-            <option value="" selected disabled hidden>Choose One Below</option>
-            <option value="1">Arts &amp; Theatre</option>
-            <option value="2">Music</option>
-            <option value="3">Sports</option>
-        </select>
-        
-        <div>
-            <button id="subBtn" class="btn btn-primary">Get Events</button>
+        </div>
+    
+        <form style="text-align: left;">
+                Enter city:  
+                <input type="text" placeholder="Houston" id="cityselect" required> 
+                Enter state:
+                <input type="text" placeholder="Tx" id="stateselect"> 
+                Event Type:
+                    <select id="dropdown">
+                        <option value="" selected disabled hidden>Choose One Below</option>
+                        <option value="1">Arts &amp; Theatre</option>
+                        <option value="2">Music</option>
+                        <option value="3">Sports</option>
+                    </select>
+                
+                
+                <button id="subBtn" class="btn btn-primary">Get Events</button>
+                    
+                <button id="clearBtn"class="btn btn-danger" onclick="clearForm(this.form);">Clear</button>
+                      
+                    
+        </form>
+    
+        <div class="subForm">
+            <div class="display-3 eventHead">A Pillow &amp; Ticketmaster Collaboration</div>
+                
+            <p class="eventHeadInfo">To provide our customer's with access to top of the line events in the area</p> 
         </div>
         
-        <button id="clearBtn"class="btn btn-danger" onclick="clearForm(this.form);">Clear</button>
-    </form>
-
+        <table id="eventTable"> 
+                <tr>
+                    <th></th>
+                    <th>Event</th>
+                    <th>Price</th>
+                    <th>Date/Time</th>
+                    <th>Venue</th>
+                    <th>Website</th>
+                </tr>
+                <tr id="eventInfo">
     
-    </div>
-
-    <table > 
-        <tr>
-            <th></th>
-            <th>Promoter</th>
-            <th>Event</th>
-            <th>Date/Time</th>
-            <th>Venue</th>
-            <th>Website</th>
-        </tr>
-        <tr id="eventInfo">
-           
-        </tr>
-        <tr>
-            <tbody ></tbody>
-        </tr>
-    </table>
+                </tr>
+        </table>
     
-    <!-- <div id="eventInfo"></div> -->
     
-      
-    <!-- Optional JavaScript
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-    <script src="events.js"></script>
-</body>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+        <script src="events.js"></script>
+    </body>
 </html>

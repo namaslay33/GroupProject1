@@ -1,19 +1,73 @@
+.eventNav {
+    background-image: URL(concert-goers.jpg);
+    height: 230px;
+    background-position: center;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+#subBtn, #clearBtn {
+    margin-left: 2%;
+}
+
+.eventHead {
+    position: relative;
+    /* margin-top: 1.2%; */
+}
+
+.subForm, form{
+    position: relative;
+    z-index: 2;
+}
+
+.subForm {
+    margin-top: 30px;
+}
+
+.eventHeadInfo {
+    margin-top: 5.5%;
+}
+
+form {
+    margin-top: 1%;
+}
+
 table {
-    margin: 0 auto;
+    /* margin: 300px 50px 50px 50px; */
+    position: relative;
+    /* top: 70px; */
+    /* display: flex; */
+    /* top: 300px;
+    left: 100px; */
+}
+
+table, form {
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 table, th, td {
     border: 1px solid black;
  }
 
- th, td {
-    padding-left: 50px;
-    padding-right: 50px;
+ th {
+     border: 5px solid #178DB3;
+     background-color: #178DB3;
+     color: white;
  }
 
- th {
+ th, td {
+    padding-left: 30px;
+    padding-right: 30px;
+ }
+
+ .eventHead, p, th, td {
      text-align: center;
  }
 
-#eventList tr:hover {background-color: #ddd;}
+ .eventImg {
+    height: 70px;
+ }
+
+#eventTable tr:hover {background-color: #ddd;}
 
