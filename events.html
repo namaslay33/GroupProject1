@@ -12,50 +12,93 @@
 </head>
 <body>
 
-        <div class="eventNav fixed-top">
+    <div class="eventNav fixed-top">
     
-        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg" style="width: 100%;">
+      
+            <!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;"> -->
+      <nav class="navbar-brand">
+        <h5>
+          <a href="index.html">
+            <img src="/Images/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="">
+          </a>Pillow
+        </h5>
+      </nav>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+    </button>
+      
+    <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto -mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/map.html">Map</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tables
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/housetable.html">House Tables</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/schoolListTable.html">School Tables</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/events.html">Event Tables</a>
+              </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Contact<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+  
+  <!-- </nav> -->
+  </nav>
     
-        <form style="text-align: left;">
-                Enter city:  
-                <input type="text" placeholder="Houston" id="cityselect" required> 
-                Enter state:
-                <input type="text" placeholder="Tx" id="stateselect"> 
-                Event Type:
-                    <select id="dropdown">
-                        <option value="" selected disabled hidden>Choose One Below</option>
-                        <option value="1">Arts &amp; Theatre</option>
-                        <option value="2">Music</option>
-                        <option value="3">Sports</option>
-                    </select>
+    <form style="text-align: left;">
+        Enter city:  
+        <input type="text" placeholder="Houston" id="cityselect" required> 
+        Enter state:
+        <input type="text" placeholder="Tx" id="stateselect"> 
+        Event Type:
+        <select id="dropdown">
+            <option value="" selected disabled hidden>Choose One Below</option>
+            <option value="1">Arts &amp; Theatre</option>
+            <option value="2">Music</option>
+            <option value="3">Sports</option>
+        </select>  
                 
-                
-                <button id="subBtn" class="btn btn-primary">Get Events</button>
+        <button id="subBtn" class="btn btn-primary">Get Events</button>
                     
-                <button id="clearBtn"class="btn btn-danger" onclick="clearForm(this.form);">Clear</button>
+        <button id="clearBtn"class="btn btn-danger" onclick="clearForm(this.form);">Clear</button>
                       
                     
-        </form>
+    </form>
     
-        <div class="subForm">
-            <div class="display-3 eventHead">A Pillow &amp; Ticketmaster Collaboration</div>
+    <div class="subForm">
+        <div class="display-3 eventHead">A Pillow &amp; Ticketmaster Collaboration</div>
                 
-            <p class="eventHeadInfo">To provide our customer's with access to top of the line events in the area</p> 
-        </div>
+        <p class="eventHeadInfo">To provide our customer's with access to top of the line events in the area</p> 
+    </div>
         
-        <table id="eventTable"> 
-                <tr>
-                    <th></th>
-                    <th>Event</th>
-                    <th>Price</th>
-                    <th>Date/Time</th>
-                    <th>Venue</th>
-                    <th>Website</th>
-                </tr>
-                <tr id="eventInfo">
+     <table id="eventTable"> 
+        <tr>
+            <th></th>
+            <th>Event</th>
+            <th>Price</th>
+            <th>Date/Time</th>
+            <th>Venue</th>
+            <th>Website</th>
+        </tr>
+        <tr id="eventInfo">
     
-                </tr>
-        </table>
+        </tr>
+     </table>
     
     
         <!-- Optional JavaScript -->

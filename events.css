@@ -15,7 +15,7 @@
     /* margin-top: 1.2%; */
 }
 
-.subForm, form{
+nav, .subForm, form{
     position: relative;
     z-index: 2;
 }
