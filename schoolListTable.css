@@ -3,7 +3,6 @@ h1 {
     color: white;
     font-size: 3em;
 }
-
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -29,4 +28,9 @@ th {
 
 .myInput {
     background-color: grey;
+}
+
+.schoolWebsite{
+    overflow: hidden;
+    width: 100px;
 }
