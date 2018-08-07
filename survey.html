@@ -14,15 +14,51 @@
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-            <nav class="navbar-brand">
-                <h5>
-                    <a href="index.html">
-                        <img src="/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="">
-                    </a>Pillow</h5>
-            </nav>
-        </nav>
+    
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; width: 100%;">
+      
+            <!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;"> -->
+      <nav class="navbar-brand">
+        <h5>
+          <a href="index.html">
+            <img src="/Images/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="">
+          </a>Pillow
+        </h5>
+      </nav>
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto -mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/map.html">Map</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tables
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/housetable.html">House Tables</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/schoolListTable.html">School Tables</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Event Tables</a>
+              </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Contact<span class="sr-only">(current)</span></a>
+              </li>
+          </ul>
+        </div>
+  
+  <!-- </nav> -->
+  </nav>
+  <div class="container">
         <form class="form">
             <div class="display-3">How are we doing?</div>
             <p>At Pillow, we are always working to enhance our customer's experience. We'd love to hear on how we can improve.
@@ -127,6 +163,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
+    <script src="/Scripts/survey.js"></script>
 </body>
 
 </html>

@@ -78,7 +78,7 @@ $('#subBtn').on('click', function (e) {
 
             // smoothZoom(map, 11, map.getZoom());
             var icon = {
-                url: "/homeicon.png", // url
+                url: "/Images/homeicon.png", // url
                 scaledSize: new google.maps.Size(30, 30), // scaled size
             };
             var marker = new google.maps.Marker({

@@ -60,7 +60,7 @@ $('#subBtn').on('click', function (e) {
 
                 var myLatlng = new google.maps.LatLng(latitude, longitude);
                 var icon = {
-                    url: "/educationicon.png", // url
+                    url: "/Images/educationicon.png", // url
                     scaledSize: new google.maps.Size(30, 30), // scaled size
                 };
                 var marker = new google.maps.Marker({
