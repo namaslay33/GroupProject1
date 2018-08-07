@@ -16,10 +16,12 @@
     </nav>
 
     
+<!-- Had this as a row. I think it made the page shrink -->
+    <div style="padding: 10px; margin-top: 55px;">
+   <div></div>
 
-    <div class="row" style="padding: 10px; margin-top: 55px;">
-    <div class="col-1"></div>
-    <div class="col-md-5 col-sm-12" id="searcharea">
+    <div id="searcharea">
+
     <form style="text-align: left;">
         Enter city:  
         <input type="text" placeholder="Houston" id="cityselect" required> <br> <br>
@@ -39,9 +41,28 @@
         
         <button id="clearBtn"class="btn btn-danger" onclick="clearForm(this.form);">Clear</button>
     </form>
+
+    
     </div>
 
-    <div id="eventInfo"></div>
+    <table > 
+        <tr>
+            <th></th>
+            <th>Promoter</th>
+            <th>Event</th>
+            <th>Date/Time</th>
+            <th>Venue</th>
+            <th>Website</th>
+        </tr>
+        <tr id="eventInfo">
+           
+        </tr>
+        <tr>
+            <tbody ></tbody>
+        </tr>
+    </table>
+    
+    <!-- <div id="eventInfo"></div> -->
     
       
     <!-- Optional JavaScript

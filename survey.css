@@ -6,6 +6,10 @@ body {
     display: flex;
 }
 
+.container{
+    justify-content: center;
+}
+
 .form {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -22,9 +26,9 @@ body {
     padding-bottom: 20px;
 }
 
-.radiobtn, .chkbox{
-   
-}
+/* .toolbar{
+   justify-content: center;
+} */
 
 .commentbox{
     width: 80%;

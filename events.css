@@ -1,0 +1,11 @@
+#eventList {
+    width: 100%;
+}
+
+#eventList td, #eventList th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+#eventList tr:hover {background-color: #ddd;}
+
