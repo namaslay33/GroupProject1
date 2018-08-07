@@ -1,25 +1,22 @@
 var map;
 var locations = [];
-var table = $('#t2').children('tbody'); 
+var table = $('#t2').children('tbody');
+
 function initMap() {
 
     // load the map
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
-            lat: 40,
-            lng: -100
+            lat: 37.09024,
+            lng: -95.712891
         },
         zoom: 4,
     });
 }
-// $('#clearBtn').on('click', function (e) {
-//     e.preventDefault();
-//     // console.log('working');
-//     table.empty();
-//     map.set
-// });
 $('#subBtn').on('click', function (e) {
     e.preventDefault();
+    $('#t2').find("tr:gt(0)").remove();
+    locations.length = 0;
     // console.log('help'); 
     // getting the API data from zillow
     var city = $("#cityselect").val();
@@ -58,19 +55,19 @@ $('#subBtn').on('click', function (e) {
             position["Description"] = medianValue;
             locations.push(position);
 
-            var contentString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h4 id="firstHeading" class="firstHeading">' + name + '</h4>'+
-            '<div id="bodyContent">'+
-            '<p>The median home value in ' + name + ' is $'+ medianValue + '.' +
-            '</p>' +
-            '</div>'+
-            '</div>';
-            
+            var contentString = '<div id="content">' +
+                '<div id="siteNotice">' +
+                '</div>' +
+                '<h4 id="firstHeading" class="firstHeading">' + name + '</h4>' +
+                '<div id="bodyContent">' +
+                '<p>The median home value in ' + name + ' is $' + medianValue + '.' +
+                '</p>' +
+                '</div>' +
+                '</div>';
+
             var infowindow = new google.maps.InfoWindow({
                 content: contentString
-              });
+            });
 
             var myLatlng = new google.maps.LatLng(position.lat, position.lng)
 
@@ -90,30 +87,55 @@ $('#subBtn').on('click', function (e) {
                 map: map,
                 title: name,
                 icon: icon,
-              });
-
-            marker.addListener('click', function() {
+            });
+            marker.addListener('click', function () {
                 infowindow.open(map, marker);
             });
-            google.maps.event.addListener(map, "click", function(event) {
+            google.maps.event.addListener(map, "click", function (event) {
                 infowindow.close();
             });
         })
 
-        locations.sort(function(a, b) {
-            return a.Description - b.Description;
-        });
-        locations.reverse();
+        function mostExpensiveSort() {
+            $('#t2').find("tr:gt(0)").remove();
+            locations.sort(function (a, b) {
+                return a.Description - b.Description;
+            });
+            locations.reverse();
 
-        for (i=0; i<16; i++){     
-            table.append('<tr><td>' + locations[i].title + '</td><td>' + locations[i].Description + '</td></tr>');
-            console.log("end: " + i);
-            $('#t2').find("tr:gt(16)").remove();
+            for (i = 0; i < 16; i++) {
+                table.append('<tr><td>' + locations[i].title + '</td><td>$' + locations[i].Description + '</td></tr>');
+                // console.log("end: " + i);
+                $('#t2').find("tr:gt(16)").remove();
+            }
         }
+        mostExpensiveSort();
+        function leastExpensiveSort() {
+            $('#t2').find("tr:gt(0)").remove();
+            locations.sort(function (a, b) {
+                return a.Description - b.Description;
+            });
 
-}
+            for (i = 0; i < 16; i++) {
+                table.append('<tr><td>' + locations[i].title + '</td><td>' + locations[i].Description + '</td></tr>');
+                // console.log("end: " + i);
+                $('#t2').find("tr:gt(16)").remove();
+            }
+        }
+        $("#most").on('click', function () {
+            mostExpensiveSort();
+            console.log('high');
+        });
+        $("#least").on('click', function () {
+            leastExpensiveSort();
+            console.log('low');
+        });
+    
+        
 
-// console.log();
+    }
+
+    // console.log();
 
 
 })

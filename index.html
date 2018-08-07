@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>P i l l o w S e a r c h</title>
+    <title>Pillow Search</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <style>
-      html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; }
+      html, body {font-family: Arial, Helvetica, sans-serif; height: 100%; margin: 0; padding: 0; overflow: hidden; }
       #map { height: 100%; max-height: 91%; margin: 0; padding: 0; overflow: hidden; }
       input { width: 150px; margin-top: 20px; }
         .menubar {
@@ -74,13 +74,28 @@
       #select:focus{
         outline:0;
       }
+      select.btn-mini {
+    height: auto;
+    line-height: 14px;
+    font-size:10px;
+      }
+      select.btn {
+          -webkit-appearance: button;
+            -moz-appearance: button;
+                  appearance: button;
+          padding-right: 16px;
+      }
+
+      select.btn-mini + .caret {
+          margin-left: -20px;
+          margin-top: 9px;
+      }
     </style>
   </head>
   <body>
-  
+
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <nav class="navbar-brand">
-          
           <h5><img src="/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="">Pillow</h5></nav>
         <nav class="navbar-text">
           Enter a location to search for local real estate and school data
@@ -93,15 +108,24 @@
         </div>  
       </div>
     </nav>
+
   </div>
   <div id="floating-panel2">
-  <button type="button" id="houses" onclick="showHideHouse()">Show Data</button>
+  <button type="button" id="houses" onclick="showHideHouse()">Table</button>
   </div>
   <div id="floating-panel">
   <table id="t2">
       <tr>
         <th>Neighborhood</th>
         <th>Median Price</th>
+        <th>
+            <div id="floating-panel3">
+          <select name="dropdown" class="btn btn-mini">
+            <option id="most" value="1">Most $$$</option>
+            <option id="least" value="2" >Least  $</option>
+          </select>
+        </div>
+        </th>
       </tr>
       <tbody>
       </tbody>
@@ -113,6 +137,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="https://cdn.awesomefunctions.com/awesome-functions.min.js"></script>
     <script src="husseinKhorshed.js"></script>
     <script src="project1.js"></script>
     <script>

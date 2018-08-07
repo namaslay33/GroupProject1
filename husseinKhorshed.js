@@ -7,8 +7,8 @@ function initMap() {
     // load the map
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
-            lat: 40,
-            lng: -100
+            lat: 37.09024, 
+            lng: -95.712891
         },
         zoom: 4,
     });
@@ -20,6 +20,9 @@ $.getJSON('https://code.org/schools.json' , function(data) {
     // console.log(data['schools'][0]['zip']);
     // markers = [];
     var schools = data.schools
+    var school = schools.compact
+    console.log(school);
+    // console.log(schools);
     for (i=0; i <= data.schools.length; i++){
         (function (schools) {
       var name = data.schools[i].name,
@@ -34,6 +37,8 @@ $.getJSON('https://code.org/schools.json' , function(data) {
           zip = data.schools[i].zip,
           latitude = data.schools[i].latitude,
           longitude = data.schools[i].longitude;
+
+          
 
           var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
