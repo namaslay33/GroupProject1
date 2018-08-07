@@ -18,16 +18,40 @@ $(function(){
             // ticketMasterError(response);
 
             for(item in info){
-               
-                $("<td>").html(info._embedded.events[0].name)
-                // $("<td>").html(info._embedded.events[1].url)
-                // $("<td>").html(info._embedded.events[1].url)
-                .appendTo($("#eventInfo"))
+                for (i in item) {
+
+                    tmInfo = info._embedded.events;
+
+                    $("<td>").html(tmInfo[i].images[0].url)
+                    .appendTo($("#eventInfo"))
+
+                    $("<td>").html(tmInfo[i].promoter.name)
+                    .appendTo($("#eventInfo"))
+
+                    $("<td>").html(tmInfo[i].name)
+                    .appendTo($("#eventInfo"))
+
+                    $("<td>").html(tmInfo[i].dates.start.localDate).html(tmInfo[i].dates.start.localTime)
+                    .appendTo($("#eventInfo"))
+
+                    $("<td>").html(tmInfo[i]._embedded.venues[0].name)
+                    .appendTo($("#eventInfo"))
+
+                    $("<td>").html(tmInfo[i].url)
+                    .appendTo($("#eventInfo"))
+
+                    $("<tr>").html(i)
+                    .appendTo($("#eventTable"))
+
+
+                }
+
+                
             }
            
         })
     })
-
+});
 
     // .fail(function(error){
     //     console.log(error);
@@ -95,7 +119,7 @@ $(function(){
 //     }
     
     
-});
+
 
 
 

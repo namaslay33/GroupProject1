@@ -1,11 +1,19 @@
-#eventList {
-    width: 100%;
+table {
+    margin: 0 auto;
 }
 
-#eventList td, #eventList th {
+table, th, td {
     border: 1px solid black;
-    padding: 8px;
-}
+ }
+
+ th, td {
+    padding-left: 50px;
+    padding-right: 50px;
+ }
+
+ th {
+     text-align: center;
+ }
 
 #eventList tr:hover {background-color: #ddd;}
 
