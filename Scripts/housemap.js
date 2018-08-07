@@ -131,7 +131,56 @@ $('#subBtn').on('click', function (e) {
             console.log('low');
         });
 
+        // function borderRegion() {
+        //     var styles = [{
+        //         "featureType": "administrative.province",
+        //         "elementType": "geometry.stroke",
+        //         "stylers": [{
+        //                 "visibility": "on"
+        //             },
+        //             {
+        //                 "weight": city
+        //             },
+        //             {
+        //                 "color": "#24b0e2"
+        //             }
+        //         ]
+        //     }, {
+        //         "featureType": "road",
+        //         "elementType": "geometry",
+        //         "stylers": [{
+        //             "visibility": "off"
+        //         }]
+        //     }, {
+        //         "featureType": "administrative.locality",
+        //         "stylers": [{
+        //             "visibility": "off"
+        //         }]
+        //     }, {
+        //         "featureType": "road",
+        //         "elementType": "labels",
+        //         "stylers": [{
+        //             "visibility": "off"
+        //         }]
+        //     }];
+        
+        //     var geocoder = new google.maps.Geocoder();
+        //     geocoder.geocode({
+        //         'address': 
+        //     }, (results, status) => {
+        //         var mapOpts = {
+        //             mapTypeId: google.maps.MapTypeId.ROADMAP,
+        //             scaleControl: true,
+        //             scrollwheel: false,
+        //             styles: styles,
+        //             center: results[0].geometry.location,
+        //             zoom: 6
+        //         }
+        //         map = new google.maps.Map(document.getElementById("map"), mapOpts);
+        //     });
+        // }
 
+        // borderRegion();
 
     }
 

@@ -29,3 +29,17 @@ slide.resize {
     width: 900px;
     height: 600px;
 }
+.container { font-size: 1rem; }
+
+@media (min-width: 576px) {
+    .container { font-size: 1rem; }
+}
+@media (min-width: 768px) {
+    .container { font-size: 1rem; }
+}
+@media (min-width: 992px) {
+    .container { font-size: 1.25rem; }
+}
+@media (min-width: 1200px) {
+    .container { font-size: 1.5rem; }
+}
