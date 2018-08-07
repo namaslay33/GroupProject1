@@ -1,96 +1,100 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>School List</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="schoolListTable.css">
+<head>
+  <title>School List</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="/Styles/schoolListTable.css">
+</head>
 
-  </head>
-  <body>
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+<body id="page-wrap">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-
-              <nav class="navbar-brand">
-                <h5>
-                  <img src="/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="Pillow Logo">
-                  Pillow
-                </h5>
-              </nav>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; width: 100%;">
       
-        <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Map</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tables
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">House Tables</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">School Tables</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Event Tables</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
+          <!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;"> -->
+    <nav class="navbar-brand">
+      <h5>
+        <a href="index.html">
+          <img src="/Images/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="">
+        </a>Pillow
+      </h5>
     </nav>
 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+      <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto -mt-2 mt-lg-0">
 
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Home</a>
+          </li>
 
-<div class="container-fluid">
+          <li class="nav-item">
+            <a class="nav-link" href="/map.html">Map</a>
+          </li>
 
-    <div class="container-fluid">
-    <h1>School List</h1>
-        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Tables
+            </a>
 
-  
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/housetable.html">House Tables</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item active" href="#">School Tables<span class="sr-only">(current)</span></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Event Tables</a>
+            </div>
 
-    <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Filter..">
-    <br>
+          </li>
+          
+          <li class="nav-item">
+              <a class="nav-link" href="/survey.html">Contact</a>
+          </li>
+          <li>
+            <input type="text" id="myInput" class="6-col" onkeyup="searchFunction()" placeholder="Filter.." style="display-flex align-content-left">
+          </li>
+        </ul>
+      </div>
+
+<!-- </nav> -->
+</nav>
+  <div class="container-fluid">
 
     <div id="myDiv">
-        <table id="mytable">
-                <thead>
-                  <tr>
-                    <th class="schoolName">School</th>
-                    <th class="schoolStreet">Street</th>
-                    <th class="schoolCity">City</th>
-                    <th class="schoolState">State</th>
-                    <th class="schoolZip">Zip</th>
-                  </tr>
-                </thead>
-
-                <tbody id="myTable">
-                </tbody>
-
-        </table>
+      <table id="mytable">
+        <thead>
+          <tr>
+            <th class="schoolName">School</th>
+            <th class="schoolStreet">Street</th>
+            <th class="schoolCity">City</th>
+            <th class="schoolState">State</th>
+            <th class="schoolZip">Zip</th>
+          </tr>
+        </thead>
+        <tbody id="myTable">
+        </tbody>
+      </table>
     </div>
 
   </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src='https://code.jquery.com/jquery-1.12.4.min.js'></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-    <script src="schoolListTable.js"></script>
-  </body>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script src='https://code.jquery.com/jquery-1.12.4.min.js'></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+    crossorigin="anonymous"></script>
+  <script src="/Scripts/schoolListTable.js"></script>
+</body>
+
 </html>
