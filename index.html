@@ -1,54 +1,82 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Pillow Homepage</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="project1.css">
-  </head>
+    <link rel="stylesheet" href="/Styles/index.css">
+</head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Finding your new home made easy!</a>
-    </nav>
-    
-    <div class="row" style="padding: 10px; margin-top: 55px;">
-      <!-- <div class="col-1"></div> -->
-    <div class="col-md-5 col-sm-12" id="searcharea">
-    <form style="text-align: left;">
-        Enter city:  
-        <input type="text" placeholder="Houston" id="cityselect" required> <br> <br>
-        Enter state:
-        <input type="text" placeholder="Texas" id="stateselect"> <br> <br>
-        <!-- <label for="exampleFormControlSelect1">Number of results desired:</label> -->
-        <!-- <input type="number" id="iselect" min="1" max="25"> <br> <br> -->
-        <button id="subBtn" class="btn btn-primary">submit</button>
-        <button id="clearBtn"class="btn btn-danger">clear</button>
-    </form>
-  </div>
 
-
-  <div class="col-md-7 col-sm-12">
-    <div id="sidebar"></div>
-  </div>
-</div>
-
-
-
-            
-                <!-- Page Content -->
-
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-async defer></script> -->
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; width: 100%;">
       
+          <!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;"> -->
+    <nav class="navbar-brand">
+      <h5>
+          <img src="/Images/pillowicon.png" style="width:30px; height:20px" class="d-inline-block align-center" alt="">
+        Pillow
+      </h5>
+    </nav>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto -mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/map.html">Map</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Tables
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/housetable.html">House Tables</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/schoolListTable.html">School Tables</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/events.html">Event Tables</a>
+            </div>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/survey.html">Contact</a>
+            </li>
+        </ul>
+      </div>
+
+<!-- </nav> -->
+</nav>
+            
+    <div class="row" style=" margin-top: 55px;">
+      
+    <div id="slider">
+        <ul class="slides">
+            <li class="slide"><img src="/Images/CoupleBuying.jpg" alt="CoupleBuying"></li>
+            <li class="slide"><img src="/Images/TeensPizza.jpg" alt="TeensPizza"></li>
+            <li class="slide"><img src="/Images/YoungBrothers.jpg" alt="YoungBrothers"></li>
+            <li class="slide"><img src="/Images/GrandpaGranddaughter.jpg" alt="GrandpaGranddaughter"></li>
+            <li class="slide"><img src="/Images/YoungFamily2.jpg" alt="YoungFamily2"></li>
+            <li class="slide"><img src="/Images/KidStudying.jpg" alt="KidStudying"></li>
+            <li class="slide"><img src="/Images/YoungFamily.jpg" alt="YoungFamily"></li>
+            <li class="slide"><img src="/Images/CollegeGrad.jpg" alt="CollegeGrad"></li>
+            <li class="slide"><img src="/Images/SchoolChildrenPlay.jpg" alt="SchoolChildrenPlay"></li>
+            <li class="slide"><img src="/Images/OlderCouple.jpg" alt="OlderCouple"></li>
+        </ul>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+    <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-    <script src="project1.js"></script>
-  </body>
+    <script src="/Scripts/index.js"></script>
+</body>
 </html>
