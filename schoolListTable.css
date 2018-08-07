@@ -1,0 +1,51 @@
+h1 {
+    background: darkblue;
+    color: white;
+    font-size: 3em;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    width: auto;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: lightblue;
+}
+
+th {
+    font-size: 1.5em;
+    background-color:darkblue;
+    color: lightblue;
+}
+
+
+input[type=text] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+    
+input[type=text]:focus {
+        width: 100%;
+        background-color: grey;
+        font-size: 1.2em;
+        color: white;
+        border: 3px solid blue;
+    }
