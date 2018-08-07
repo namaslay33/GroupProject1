@@ -13,17 +13,49 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; width: 100%;">
+      
+          <!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;"> -->
     <nav class="navbar-brand">
       <h5>
         <a href="index.html">
           <img src="/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="">
-        </a>Pillow</h5>
+        </a>Pillow
+      </h5>
     </nav>
-    <nav class="navbar-text">
-      Enter a location to search for local real estate and school data
-    </nav>
-  </nav>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto -mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/map.html">Map</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Tables
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/housetable.html">House Tables</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/schoolListTable.html">School Tables</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Event Tables</a>
+            </div>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/survey.html">Contact</a>
+            </li>
+        </ul>
+      </div>
+
+<!-- </nav> -->
+</nav>
   <div class="container-fluid">
     <h1>School List</h1>
     <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Filter..">
