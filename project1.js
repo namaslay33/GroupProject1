@@ -3,7 +3,6 @@ var locations = [];
 var table = $('#t2').children('tbody');
 
 function initMap() {
-
     // load the map
     map = new google.maps.Map(document.getElementById('map'), {
         center: {

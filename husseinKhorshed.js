@@ -19,10 +19,7 @@ $.getJSON('https://code.org/schools.json' , function(data) {
     // console.log(data);
     // console.log(data['schools'][0]['zip']);
     // markers = [];
-    var schools = data.schools
-    var school = schools.compact
-    console.log(school);
-    // console.log(schools);
+    var schools = data.schools;
     for (i=0; i <= data.schools.length; i++){
         (function (schools) {
       var name = data.schools[i].name,
@@ -38,7 +35,6 @@ $.getJSON('https://code.org/schools.json' , function(data) {
           latitude = data.schools[i].latitude,
           longitude = data.schools[i].longitude;
 
-          
 
           var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
