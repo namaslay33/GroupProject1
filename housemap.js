@@ -109,6 +109,7 @@ $('#subBtn').on('click', function (e) {
             }
         }
         mostExpensiveSort();
+
         function leastExpensiveSort() {
             $('#t2').find("tr:gt(0)").remove();
             locations.sort(function (a, b) {
@@ -129,8 +130,8 @@ $('#subBtn').on('click', function (e) {
             leastExpensiveSort();
             console.log('low');
         });
-    
-        
+
+
 
     }
 
