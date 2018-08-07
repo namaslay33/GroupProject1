@@ -14,23 +14,61 @@
 </head>
 
 <body>
-  <div class="container-fluid">
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-      <nav class="navbar-brand">
-        <h5>
-          <a href="index.html">
-            <img src="/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="">
-          </a>Pillow</h5>
-      </nav>
-      <div class="options">
-        <input type="text" placeholder="City.." id="cityselect">
-        <input type="text" placeholder="State.." id="stateselect">
-        <button id="subBtn" class="btn btn-sm">Search</button>
-      </div>
-      <div class="options">
-        <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Filter..">
-      </div>
+  
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; width: 100%;">
+      
+          <!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;"> -->
+    <nav class="navbar-brand">
+      <h5>
+        <a href="index.html">
+          <img src="/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="">
+        </a>Pillow
+      </h5>
     </nav>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto -mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/map.html">Map</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Tables
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item active" href="#">House Tables<span class="sr-only">(current)</span></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/schoolListTable.html">School Tables</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Event Tables</a>
+            </div>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/survey.html">Contact</a>
+            </li>
+        </ul>
+      </div>
+
+<!-- </nav> -->
+</nav>
+<div class="container-fluid">
+    <h1>Neigborhood List</h1>
+    <div class="col-12">
+        <div class="options">
+          <input type="text" placeholder="City.." id="cityselect">
+          <input type="text" placeholder="State.." id="stateselect">
+          <button id="subBtn" class="btn btn-sm">Search</button>
+
+          <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Filter..">
+        </div>
+      </div>
     <div id="myDiv">
       <table id="mytable">
         <thead>
