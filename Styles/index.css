@@ -29,3 +29,21 @@ slide.resize {
     width: 900px;
     height: 600px;
 }
+.iconRow {
+    position: relative;
+    bottom: 30px;
+    width: 150px;
+    margin-top: 20px;
+    padding: 20px 30px 0 30px;
+}
+.footer {
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #55C1E8;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+}
