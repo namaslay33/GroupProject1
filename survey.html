@@ -68,10 +68,10 @@
             </div>
         </div>
         <hr>
-
+        <form>
         <div class="col-12">How would you rate our design? Is it appealing to you?</div>
         <div class="col-12">
-            <select class="custom-select custom-select">
+            <select class="custom-select custom-select" id="design">
                 <option selected>Choose...</option>
                 <option value="1">Great!</option>
                 <option value="2">It's Okay</option>
@@ -81,7 +81,7 @@
         <hr>
         <div class="col-12">Were you satisfied with our functionality?</div>
         <div class="col-12">
-                <select class="custom-select custom-select">
+                <select class="custom-select custom-select" id="functionality">
                     <option selected>Choose...</option>
                     <option value="1">I really found it useful!</option>
                     <option value="2">It could use improvement</option>
@@ -92,7 +92,7 @@
         <hr>
         <div class="col-12">Would you recommend us to a friend or colleague?</div>
         <div class="col-12">
-                <select class="custom-select custom-select">
+                <select class="custom-select custom-select" id="recommend">
                         <option selected>Choose...</option>
                         <option value="1">Absolutely</option>
                         <option value="2">Maybe</option>
@@ -100,8 +100,9 @@
                     </select>
         </div>
         <hr>
-        <div class="col-12"><button class="btn btn-info">Submit</button></div>
+        <div class="col-12"><button class="btn btn-info submitBtn">Submit</button></div>
         <hr>
+    </form>
         <div class="row">
             <div class="col-3 offset-2">
                 <img src="/Images/phone.png" style="height:75px;" alt="">
@@ -126,93 +127,6 @@
     </div>
     </div>
     </div>
-    <!-- <div class="form-group">
-            <label for="question">Were you satisfied with the service provided during your search?</label>
-            <div>
-                <input type="radio" value="option1" name="option">
-                <label class="radio-inline radiobtn" for="option1">Yes, I was satisfied</label>
-                <input type="radio" value="option3" name="option">
-                <label class="radio-inline radiobtn" for="option3">No, I was not satisfied</label>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="question">Which source(s) of information did you find most helpful?</label>
-            <div>
-                <input type="checkbox" value="option1">
-                <label class="chkbox" for="option1">Home Search</label>
-                <input type="checkbox" value="option3">
-                <label class="chkbox" for="option3">Area Map</label>
-                <input type="checkbox" value="option4">
-                <label class="chkbox" for="option4">School Evaluation</label>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="question">How would you rate the service process?</label>
-            <div class="row">
-                <div class="col-2 offset-1">
-                    <p style="text-align: enter">Not Satisfied</p>
-                </div>
-                <div class="col-6">
-                    <div class="btn-toolbar" role="toolbar" aria-label="buttongroup">
-                        <div class="btn-group mr-2" role="group" aria-label="buttongroup">
-                            <button type="button" class="btn btn-primary">1</button>
-                            <button type="button" class="btn btn-primary">2</button>
-                            <button type="button" class="btn btn-primary">3</button>
-                            <button type="button" class="btn btn-primary">4</button>
-                            <button type="button" class="btn btn-primary">5</button>
-                            <button type="button" class="btn btn-primary">6</button>
-                            <button type="button" class="btn btn-primary">7</button>
-                            <button type="button" class="btn btn-primary">8</button>
-                            <button type="button" class="btn btn-primary">9</button>
-                            <button type="button" class="btn btn-primary">10</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <p>Satisfied</p>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="">How likely would you recommend us to a friend or colleague?</label>
-            <div class="row">
-                <div class="col-2 offset-1">
-                    <p style="text-align: center">Not Satisfied</p>
-                </div>
-                <div class="col-6">
-                    <div class="btn-toolbar " role="toolbar" aria-label="buttongroup">
-                        <div class="btn-group mr-2" role="group" aria-label="buttongroup">
-                            <button type="button" class="btn btn-primary">1</button>
-                            <button type="button" class="btn btn-primary">2</button>
-                            <button type="button" class="btn btn-primary">3</button>
-                            <button type="button" class="btn btn-primary">4</button>
-                            <button type="button" class="btn btn-primary">5</button>
-                            <button type="button" class="btn btn-primary">6</button>
-                            <button type="button" class="btn btn-primary">7</button>
-                            <button type="button" class="btn btn-primary">8</button>
-                            <button type="button" class="btn btn-primary">9</button>
-                            <button type="button" class="btn btn-primary">10</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <p>Satisfied</p>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="comments">Tell us more:</label>
-            <div>
-                <textarea class="commentbox" id="commentbox" rows="5" placeholder="Share your experience with us. What went well? What could have been better?"></textarea>
-            </div>
-        </div>
-        <div class="row">
-            <button type="submit" class="btn submitBtn offset-5">
-                Submit Feedback
-            </button>
-        </div> -->
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
