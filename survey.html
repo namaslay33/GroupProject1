@@ -14,146 +14,118 @@
 </head>
 
 <body>
-    
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; width: 100%;">
-      
-            <!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;"> -->
-      <nav class="navbar-brand">
-        <h5>
-          <a href="index.html">
-            <img src="/Images/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="">
-          </a>Pillow
-        </h5>
-      </nav>
-  
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; width: 100%;">
+
+        <!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;"> -->
+        <nav class="navbar-brand">
+            <h5>
+                <a href="index.html">
+                    <img src="/Images/pillowicon.png" width="30" height="20" class="d-inline-block align-center" alt="">
+                </a>Pillow
+            </h5>
+        </nav>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto -mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="/index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/map.html">Map</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tables
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/housetable.html">House Tables</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/schoolListTable.html">School Tables</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Event Tables</a>
-              </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Contact<span class="sr-only">(current)</span></a>
-              </li>
-          </ul>
+            <ul class="navbar-nav mr-auto -mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/map.html">Map</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Tables
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/housetable.html">House Tables</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/schoolListTable.html">School Tables</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Event Tables</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Contact
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-  
-  <!-- </nav> -->
-  </nav>
-  <div class="container">
-        <form class="form">
-            <div class="display-3">How are we doing?</div>
-            <p>At Pillow, we are always working to enhance our customer's experience. We'd love to hear on how we can improve.
-            </p>
-            <hr>
-            <div class="form-group">
-                <label for="question">Were you satisfied with the service provided during your search?</label>
-                <div>
-                    <input type="radio" value="option1" name="option">
-                    <label class="radio-inline radiobtn" for="option1">Yes, I was satisfied</label>
-                    <input type="radio" value="option2" name="option">
-                    <label class="radio-inline radiobtn" for="option2">Neutral</label>
-                    <input type="radio" value="option3" name="option">
-                    <label class="radio-inline radiobtn" for="option3">No, I was not satisfied</label>
-                </div>
+    </nav>
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-5">Tell us how we did!</h1>
             </div>
-            <div class="form-group">
-                <label for="question">Which source(s) of information did you find most helpful?</label>
-                <div>
-                    <input type="checkbox" value="option1">
-                    <label class="chkbox" for="option1">Home Search</label>
-                    <input type="checkbox" value="option2">
-                    <label class="chkbox" for="option2">Crime Index</label>
-                    <input type="checkbox" value="option3">
-                    <label class="chkbox" for="option3">Area Map</label>
-                    <input type="checkbox" value="option4">
-                    <label class="chkbox" for="option4">School Evaluation</label>
-                </div>
+        </div>
+        <hr>
+        <form>
+        <div class="col-12">How would you rate our design? Is it appealing to you?</div>
+        <div class="col-12">
+            <select class="custom-select custom-select" id="design">
+                <option selected>Choose...</option>
+                <option value="1">Great!</option>
+                <option value="2">It's Okay</option>
+                <option value="3">Terrible</option>
+            </select>
+        </div>
+        <hr>
+        <div class="col-12">Were you satisfied with our functionality?</div>
+        <div class="col-12">
+                <select class="custom-select custom-select" id="functionality">
+                    <option selected>Choose...</option>
+                    <option value="1">I really found it useful!</option>
+                    <option value="2">It could use improvement</option>
+                    <option value="3">What functionality?</option>
+                </select>
             </div>
-            <div class="form-group">
-                <label for="question">How would you rate the service process?</label>
-                <div class="row">
-                    <div class="col-2 offset-1">
-                        <p style="text-align: enter">Not Satisfied</p>
-                    </div>
-                    <div class="col-6">
-                        <div class="btn-toolbar" role="toolbar" aria-label="buttongroup">
-                            <div class="btn-group mr-2" role="group" aria-label="buttongroup">
-                                <button type="button" class="btn btn-primary">1</button>
-                                <button type="button" class="btn btn-primary">2</button>
-                                <button type="button" class="btn btn-primary">3</button>
-                                <button type="button" class="btn btn-primary">4</button>
-                                <button type="button" class="btn btn-primary">5</button>
-                                <button type="button" class="btn btn-primary">6</button>
-                                <button type="button" class="btn btn-primary">7</button>
-                                <button type="button" class="btn btn-primary">8</button>
-                                <button type="button" class="btn btn-primary">9</button>
-                                <button type="button" class="btn btn-primary">10</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <p>Satisfied</p>
-                    </div>
-                </div>
+        
+        <hr>
+        <div class="col-12">Would you recommend us to a friend or colleague?</div>
+        <div class="col-12">
+                <select class="custom-select custom-select" id="recommend">
+                        <option selected>Choose...</option>
+                        <option value="1">Absolutely</option>
+                        <option value="2">Maybe</option>
+                        <option value="3">No ???</option>
+                    </select>
+        </div>
+        <hr>
+        <div class="col-12"><button class="btn btn-info submitBtn">Submit</button></div>
+        <hr>
+    </form>
+        <div class="row">
+            <div class="col-3 offset-2">
+                <img src="/Images/phone.png" style="height:75px;" alt="">
             </div>
-            <div class="form-group">
-                <label for="">How likely would you recommend us to a friend or colleague?</label>
-                <div class="row">
-                    <div class="col-2 offset-1">
-                        <p style="text-align: center">Not Satisfied</p>
-                    </div>
-                    <div class="col-6">
-                        <div class="btn-toolbar " role="toolbar" aria-label="buttongroup">
-                            <div class="btn-group mr-2" role="group" aria-label="buttongroup">
-                                <button type="button" class="btn btn-primary">1</button>
-                                <button type="button" class="btn btn-primary">2</button>
-                                <button type="button" class="btn btn-primary">3</button>
-                                <button type="button" class="btn btn-primary">4</button>
-                                <button type="button" class="btn btn-primary">5</button>
-                                <button type="button" class="btn btn-primary">6</button>
-                                <button type="button" class="btn btn-primary">7</button>
-                                <button type="button" class="btn btn-primary">8</button>
-                                <button type="button" class="btn btn-primary">9</button>
-                                <button type="button" class="btn btn-primary">10</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <p>Satisfied</p>
-                    </div>
-                </div>
+            <div class="col-3">
+                <img src="/Images/email.png" style="height:75px;" alt="">
             </div>
-            <div class="form-group">
-                <label for="comments">Tell us more:</label>
-                <div>
-                    <textarea class="commentbox" id="commentbox" rows="5" placeholder="Share your experience with us. What went well? What could have been better?"></textarea>
-                </div>
+            <div class="col-3">
+                <img src="/Images/twitter.png" style="height:75px;" alt="">
             </div>
-            <div class="row">
-                <button type="submit" class="btn submitBtn offset-5">
-                    Submit Feedback
-                </button>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-11 col-md-10 col-lg-9 offset-1">
+                <p style="text-align: center;">Locate us</p>
             </div>
-        </form>
+        </div>
+        <div class="google-maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3463.8562141615844!2d-95.3412690498432!3d29.752874239154856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bee1bdb8b7d5%3A0xa076311499bcf380!2sDigitalCrafts%3A+Houston+Coding+Bootcamp!5e0!3m2!1sen!2sus!4v1533685173353"
+                width="100%" height="600px" frameborder="0" style="border:0"></iframe>
+        </div>
+    </div>
+    </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -163,7 +135,6 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
-    <script src="/Scripts/survey.js"></script>
 </body>
 
 </html>
