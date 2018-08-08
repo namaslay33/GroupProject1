@@ -73,3 +73,15 @@ table, th, td {
 
 #eventTable tr:hover {background-color: #ddd;}
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #55C1E8;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+}
+
