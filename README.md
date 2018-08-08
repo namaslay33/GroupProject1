@@ -1,8 +1,8 @@
-#Pillow Realty Website
+# Pillow Realty Website
 
 ## Incorprating API into a Front End Project
 
-##Introduction 
+## Introduction 
 This website is structured on four different API's working in parallel. The scope of this website is to provide an easy process in finding out about median house prices, school information, and social events that take place in the city 
 one wishes to move to.
 
@@ -31,9 +31,9 @@ There are no reqiured installations to view this project. However if you wish to
 AWS was used to deplot the website after each page of code was compiled.
 
 ## Authors
-Hunt, Skylar
-Khorshed, Hussein
-Neal, Preston
+- Hunt, Skylar
+- Khorshed, Hussein
+- Neal, Preston
 
 ## Acknowledgements
 We would like to thank Veronica Lino, Michael Baxter, and the user friendly API's that were used
