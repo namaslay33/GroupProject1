@@ -26,6 +26,10 @@ There are no reqiured installations to view this project. However if you wish to
 <img src="/Images/Screen Shot 2018-08-08 at 10.06.15.png" alt="Code Example">
 <img src="/Images/Screen Shot 2018-08-08 at 10.07.05.png" alt="Code Example">
 
+## Examples of The Live Server
+<img src="/Images/Screen shot 2018-08-08 at 10.57.33.png" alt="Live Server Snapshot">
+<img src="/Images/Screen Shot 2018-08-08 at 10.57.59.png" alt="Live Server Snapshot">
+<img src="/Images/Screen Shot 2018-08-08 at 10.58.42.png" alt="Live Server Snapshot">
 
 ## Deployment
 AWS was used to deplot the website after each page of code was compiled.
