@@ -1,6 +1,22 @@
 body {
     background-color: #55C1E8;
 }
+
+.l-panel, .r-panel {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+}
+
+.l-panel {
+    margin-left: 20px;
+}
+
+.r-panel {
+    margin-right: 40px;
+}
+
 img {
     width: 100%;
     height: auto;
@@ -29,6 +45,27 @@ slide.resize {
     width: 900px;
     height: 600px;
 }
+
+.iconRow {
+    position: relative;
+    bottom: 30px;
+    width: 150px;
+    margin-top: 20px;
+    padding: 20px 30px 0 30px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #55C1E8;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+}
+
 .container { font-size: 1rem; }
 
 @media (min-width: 576px) {
