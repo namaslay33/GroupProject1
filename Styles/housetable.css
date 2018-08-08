@@ -64,6 +64,17 @@
       border: 1px solid #ccc; 
       text-align: left; 
   }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#e3f2fd;
+    text-align: center;
+    font-size: 14px;
+    /* padding: 5px; */
+}
   
   /* 
   Max width before this PARTICULAR table gets nasty
